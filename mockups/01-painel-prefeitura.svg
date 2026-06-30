@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" font-family="Inter, system-ui, sans-serif">
+  <title>Coletaki — Painel administrativo Prefeitura</title>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E8F0F2"/><stop offset="100%" stop-color="#D4E0E3"/></linearGradient>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#B8C8CB" stroke-width="0.5"/></pattern>
+  </defs>
+  <rect width="1440" height="900" fill="#FAFAF7"/>
+  <rect x="0" y="0" width="240" height="900" fill="#0A6E7C"/>
+  <g transform="translate(24, 28)">
+    <g transform="scale(0.18)"><path d="M 152 56 A 60 60 0 1 0 152 144" fill="none" stroke="#FAFAF7" stroke-width="24" stroke-linecap="round"/><circle cx="152" cy="144" r="17" fill="#F26B5E"/></g>
+    <text x="48" y="26" fill="#FAFAF7" font-size="20" font-weight="700">coletaki</text>
+  </g>
+  <g transform="translate(24, 80)">
+    <text fill="#FAFAF7" opacity="0.6" font-size="10" letter-spacing="2">MUNICÍPIO</text>
+    <text y="20" fill="#FAFAF7" font-size="14" font-weight="600">Parnaíba — PI</text>
+    <text y="38" fill="#FAFAF7" opacity="0.7" font-size="11">Secretaria de Meio Ambiente</text>
+  </g>
+  <g font-size="13" fill="#FAFAF7">
+    <rect x="12" y="170" width="216" height="36" rx="6" fill="#FAFAF7" opacity="0.12"/>
+    <rect x="12" y="170" width="3" height="36" fill="#F26B5E"/>
+    <text x="56" y="192" font-weight="600">Painel</text>
+    <text x="56" y="232">Mapa GIS</text>
+    <text x="56" y="262">Rotas e veículos</text>
+    <text x="56" y="292">Contêineres</text>
+    <text x="36" y="330" opacity="0.55" font-size="10" letter-spacing="2">GESTÃO TERRITORIAL</text>
+    <text x="56" y="354">Áreas autorizadas</text>
+    <text x="56" y="384">Ecopontos e PEVs</text>
+    <text x="36" y="430" opacity="0.55" font-size="10" letter-spacing="2">CIDADÃOS</text>
+    <text x="56" y="454">Reportes recebidos</text>
+    <text x="56" y="484">Denúncias ativas <tspan fill="#F4A261" font-weight="700">12</tspan></text>
+    <text x="36" y="530" opacity="0.55" font-size="10" letter-spacing="2">IMPACTO E MRV</text>
+    <text x="56" y="554">Relatórios climáticos</text>
+    <text x="56" y="584">ODS e indicadores</text>
+  </g>
+  <rect x="240" y="0" width="1200" height="64" fill="#FFFFFF" stroke="#E5E5E0"/>
+  <text x="264" y="38" font-size="20" font-weight="700" fill="#1F2A30">Painel municipal — visão geral</text>
+  <g transform="translate(264, 88)">
+    <rect width="172" height="92" rx="8" fill="#FFFFFF" stroke="#E5E5E0"/>
+    <rect width="4" height="92" rx="2" fill="#0A6E7C"/>
+    <text x="16" y="24" font-size="10" fill="#7A7A6E" letter-spacing="1">COBERTURA HOJE</text>
+    <text x="16" y="56" font-size="28" font-weight="700" fill="#0A6E7C">87.4%</text>
+    <text x="16" y="76" font-size="10" fill="#2D8F4E">▲ 3.2% vs ontem</text>
+  </g>
+  <g transform="translate(448, 88)">
+    <rect width="172" height="92" rx="8" fill="#FFFFFF" stroke="#E5E5E0"/>
+    <rect width="4" height="92" rx="2" fill="#F26B5E"/>
+    <text x="16" y="24" font-size="10" fill="#7A7A6E" letter-spacing="1">DENÚNCIAS ATIVAS</text>
+    <text x="16" y="56" font-size="28" font-weight="700" fill="#F26B5E">12</text>
+    <text x="16" y="76" font-size="10" fill="#7A7A6E">7 vertidos ilegais · 5 entulho</text>
+  </g>
+  <g transform="translate(632, 88)">
+    <rect width="172" height="92" rx="8" fill="#FFFFFF" stroke="#E5E5E0"/>
+    <rect width="4" height="92" rx="2" fill="#0A6E7C"/>
+    <text x="16" y="24" font-size="10" fill="#7A7A6E" letter-spacing="1">CO₂ EVITADO · MÊS</text>
+    <text x="16" y="56" font-size="28" font-weight="700" fill="#0A6E7C">4.2 <tspan font-size="14">tCO₂e</tspan></text>
+    <text x="16" y="76" font-size="10" fill="#2D8F4E">▲ 18% vs mês anterior</text>
+  </g>
+  <g transform="translate(816, 88)">
+    <rect width="172" height="92" rx="8" fill="#FFFFFF" stroke="#E5E5E0"/>
+    <rect width="4" height="92" rx="2" fill="#0A6E7C"/>
+    <text x="16" y="24" font-size="10" fill="#7A7A6E" letter-spacing="1">TONELADAS · MÊS</text>
+    <text x="16" y="56" font-size="28" font-weight="700" fill="#0A6E7C">1.847</text>
+    <text x="16" y="76" font-size="10" fill="#7A7A6E">312 t. desviadas de aterro</text>
+  </g>
+  <g transform="translate(1000, 88)">
+    <rect width="172" height="92" rx="8" fill="#FFFFFF" stroke="#E5E5E0"/>
+    <rect width="4" height="92" rx="2" fill="#2563EB"/>
+    <text x="16" y="24" font-size="10" fill="#7A7A6E" letter-spacing="1">VEÍCULOS EM ROTA</text>
+    <text x="16" y="56" font-size="28" font-weight="700" fill="#2563EB">8 <tspan font-size="14" fill="#7A7A6E">/ 12</tspan></text>
+  </g>
+  <g transform="translate(264, 200)">
+    <rect width="828" height="540" rx="8" fill="url(#bg)" stroke="#E5E5E0"/>
+    <rect width="828" height="540" rx="8" fill="url(#grid)"/>
+    <rect width="828" height="44" rx="8" fill="#FFFFFF"/>
+    <rect y="36" width="828" height="8" fill="#FFFFFF"/>
+    <text x="20" y="28" font-size="13" font-weight="700" fill="#1F2A30">Mapa territorial — áreas autorizadas de descarte</text>
+    <polygon points="120,150 230,140 280,220 200,260 110,230" fill="#2D8F4E" fill-opacity="0.25" stroke="#2D8F4E" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="180" y="200" font-size="11" font-weight="700" fill="#1F4D2A" text-anchor="middle">Aterro Sanitário</text>
+    <text x="180" y="214" font-size="9" fill="#1F4D2A" text-anchor="middle">Licença IBAMA · até 2028</text>
+    <polygon points="450,120 540,115 555,180 470,195 430,160" fill="#F4A261" fill-opacity="0.3" stroke="#E07A1A" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="490" y="155" font-size="11" font-weight="700" fill="#7A3D0A" text-anchor="middle">Ecoponto Central</text>
+    <text x="490" y="169" font-size="9" fill="#7A3D0A" text-anchor="middle">Entulho · móveis</text>
+    <polygon points="320,310 410,300 425,360 350,385 290,355" fill="#2563EB" fill-opacity="0.22" stroke="#2563EB" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="365" y="345" font-size="11" font-weight="700" fill="#1A3A8C" text-anchor="middle">PEV Bairro Centro</text>
+    <text x="365" y="359" font-size="9" fill="#1A3A8C" text-anchor="middle">Papel · vidro · plástico</text>
+    <polygon points="580,290 670,295 680,360 615,380 565,340" fill="#84B85F" fill-opacity="0.28" stroke="#5A8F38" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="620" y="335" font-size="11" font-weight="700" fill="#2A4D14" text-anchor="middle">Compostagem</text>
+    <text x="620" y="349" font-size="9" fill="#2A4D14" text-anchor="middle">Orgânicos</text>
+    <polygon points="170,400 260,395 275,470 200,490 145,450" fill="#9B59B6" fill-opacity="0.22" stroke="#7C3AED" stroke-width="2" stroke-dasharray="6,4"/>
+    <text x="210" y="440" font-size="11" font-weight="700" fill="#4A2670" text-anchor="middle">Pilhas/Eletrônicos</text>
+    <text x="210" y="454" font-size="9" fill="#4A2670" text-anchor="middle">Lojas parceiras</text>
+    <path d="M 140 240 Q 250 280 360 320 T 600 380 Q 680 400 720 450" fill="none" stroke="#2563EB" stroke-width="2.5" opacity="0.7"/>
+    <circle cx="280" cy="290" r="9" fill="#2563EB"/>
+    <text x="280" y="293" font-size="9" font-weight="700" fill="#FAFAF7" text-anchor="middle">V1</text>
+    <circle cx="520" cy="220" r="9" fill="#2563EB"/>
+    <text x="520" y="223" font-size="9" font-weight="700" fill="#FAFAF7" text-anchor="middle">V3</text>
+    <circle cx="700" cy="430" r="9" fill="#2563EB"/>
+    <text x="700" y="433" font-size="9" font-weight="700" fill="#FAFAF7" text-anchor="middle">V5</text>
+    <path d="M 380 180 L 388 195 L 380 210 L 372 195 Z" fill="#DC2626"/>
+    <path d="M 480 380 L 488 395 L 480 410 L 472 395 Z" fill="#DC2626"/>
+    <path d="M 670 200 L 677 212 L 670 224 L 663 212 Z" fill="#DC2626"/>
+  </g>
+  <g transform="translate(1108, 88)">
+    <rect width="308" height="650" rx="8" fill="#FFFFFF" stroke="#E5E5E0"/>
+    <text x="20" y="28" font-size="14" font-weight="700" fill="#1F2A30">Denúncias prioritárias</text>
+    <text x="20" y="46" font-size="10" fill="#7A7A6E">Últimas 24 horas · 3 críticas</text>
+    <g transform="translate(20, 76)">
+      <rect width="268" height="118" rx="6" fill="#FEF2F2" stroke="#FCA5A5"/>
+      <circle cx="20" cy="20" r="7" fill="#DC2626"/>
+      <text x="20" y="24" font-size="10" font-weight="700" fill="#FAFAF7" text-anchor="middle">!</text>
+      <text x="36" y="20" font-size="11" font-weight="700" fill="#7F1D1D">VERTIDO ILEGAL</text>
+      <text x="36" y="34" font-size="9" fill="#7A7A6E">há 35 min · Bairro Pindorama</text>
+      <text x="14" y="58" font-size="11" font-weight="600" fill="#1F2A30">Descarte de produtos químicos</text>
+      <text x="14" y="74" font-size="10" fill="#7A7A6E">Suposto descarte de óleo industrial</text>
+      <text x="14" y="86" font-size="10" fill="#7A7A6E">em terreno baldio próximo ao rio.</text>
+    </g>
+    <g transform="translate(20, 206)">
+      <rect width="268" height="100" rx="6" fill="#FFFBEB" stroke="#FCD34D"/>
+      <circle cx="20" cy="20" r="7" fill="#F4A261"/>
+      <text x="36" y="20" font-size="11" font-weight="700" fill="#78350F">ENTULHO</text>
+      <text x="36" y="34" font-size="9" fill="#7A7A6E">há 2 horas · Bairro Tatus</text>
+      <text x="14" y="58" font-size="11" font-weight="600" fill="#1F2A30">Caçamba de construção</text>
+      <text x="14" y="74" font-size="10" fill="#7A7A6E">Material de obra em via pública.</text>
+    </g>
+    <g transform="translate(20, 318)">
+      <rect width="268" height="100" rx="6" fill="#F0F9FF" stroke="#7DD3FC"/>
+      <circle cx="20" cy="20" r="7" fill="#2563EB"/>
+      <text x="36" y="20" font-size="11" font-weight="700" fill="#1E3A8A">LIXO ACUMULADO</text>
+      <text x="36" y="34" font-size="9" fill="#7A7A6E">há 6 horas · Bairro Frei Higino</text>
+      <text x="14" y="58" font-size="11" font-weight="600" fill="#1F2A30">Container transbordando</text>
+    </g>
+    <g transform="translate(20, 440)">
+      <text x="0" y="0" font-size="11" font-weight="700" fill="#1F2A30">ODS contemplados este mês</text>
+      <g transform="translate(0, 14)">
+        <rect width="34" height="34" rx="6" fill="#F26B5E"/>
+        <text x="17" y="22" font-size="14" font-weight="700" fill="#FAFAF7" text-anchor="middle">11</text>
+        <rect x="42" width="34" height="34" rx="6" fill="#BF8B2E"/>
+        <text x="59" y="22" font-size="14" font-weight="700" fill="#FAFAF7" text-anchor="middle">12</text>
+        <rect x="84" width="34" height="34" rx="6" fill="#3F7E44"/>
+        <text x="101" y="22" font-size="14" font-weight="700" fill="#FAFAF7" text-anchor="middle">13</text>
+      </g>
+    </g>
+  </g>
+</svg>
