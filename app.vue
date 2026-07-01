@@ -28,11 +28,22 @@ const leis = [
   { id: '14.195', year: '2021', short: 'SocBen', title: 'Sociedade de Benefício', desc: 'Constituída como SocBen com cláusula expressa de finalidade socioambiental.' }
 ]
 
-const planos = [
-  { name: 'Municipal Pequeno', target: 'Até 30 mil habitantes', price: 'R$ 299', feats: ['Até 5 recolhedores','Até 3 veículos','App cidadã incluída','Suporte WhatsApp'] },
-  { name: 'Empresarial Básico', target: 'Até 10 recolhedores', price: 'R$ 599', feats: ['Até 10 recolhedores','Até 5 veículos','Relatórios exportáveis','Suporte prioritário'], featured: true },
-  { name: 'Empresarial Pro', target: 'Em crescimento', price: 'R$ 1.499', feats: ['Até 25 recolhedores','Otimização de rotas','API para integrações','Relatórios avançados'] },
-  { name: 'Enterprise', target: 'Grandes operações', price: 'R$ 3.499', feats: ['Ilimitado','SLA diferenciado','Customizações','Success manager'] }
+// Linha 1 — Empresas de coleta: assinatura por veículo em operação (preço regressivo por volume)
+const planosEmpresa = [
+  { name: 'Frota Inicial', target: '1 a 3 veículos', price: 'R$ 249', unit: '/veículo·mês', feats: ['Rota otimizada + navegação','Comprovação de coleta (foto + GPS)','Operadores ilimitados por veículo','App do cidadão incluído','Suporte WhatsApp'] },
+  { name: 'Frota em Crescimento', target: '4 a 10 veículos', price: 'R$ 199', unit: '/veículo·mês', feats: ['Tudo do plano anterior','Relatórios operacionais exportáveis','Otimização multi-rota','Suporte prioritário'], featured: true },
+  { name: 'Operador Regional', target: '11 a 25 veículos', price: 'R$ 169', unit: '/veículo·mês', feats: ['Tudo do plano anterior','API para integrações','Painel multi-contrato','MRV nativo por rota'] },
+  { name: 'Grande Operação', target: '26+ veículos', price: 'Sob consulta', unit: '', feats: ['Preço regressivo por volume','SLA diferenciado','Customizações','Success manager'] }
+]
+
+// Linha 2 — Prefeituras: relatório de conformidade por faixa populacional (contrato anual)
+const reportFeats = ['Relatório de conformidade PMGIRS / SINISA','Dados auditáveis para TCE, MP e câmara','Mapa público de áreas autorizadas','Canal de resposta ao cidadão','MRV climático nativo (GHG Protocol)']
+const planosPrefeitura = [
+  { faixa: 'Até 10 mil hab.', price: 'R$ 4.800', mensal: '≈ R$ 400/mês', dispensa: true },
+  { faixa: '10 a 30 mil hab.', price: 'R$ 9.600', mensal: '≈ R$ 800/mês', dispensa: true },
+  { faixa: '30 a 100 mil hab.', price: 'R$ 19.200', mensal: '≈ R$ 1.600/mês', dispensa: true, featured: true },
+  { faixa: '100 a 500 mil hab.', price: 'R$ 36.000', mensal: '≈ R$ 3.000/mês', dispensa: true },
+  { faixa: 'Acima de 500 mil', price: 'Sob consulta', mensal: 'Pregão / contrato', dispensa: false }
 ]
 
 const mockupsRow = ['/mockups/02-app-cidada-home.svg', '/mockups/03-app-cidada-denuncia.svg', '/mockups/04-app-coletor.svg']
@@ -210,20 +221,53 @@ function goToSolucao() {
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Modelo comercial</span>
-        <h2>Planos adaptados à realidade financeira de cada cliente.</h2>
+        <h2>Duas linhas de receita, um só ecossistema.</h2>
+        <p class="lead" style="margin: 0 auto;">O cidadão e a operação de campo do recolhedor são sempre grátis e ilimitados — são eles que geram o dado. A receita vem de quem opera a frota e de quem precisa provar conformidade.</p>
+      </div>
+
+      <div class="free-note">
+        <i class="pi pi-gift"></i>
+        <span><strong>Grátis para sempre:</strong> app do cidadão e app do recolhedor (operação de campo), sem limite de usuários em qualquer plano.</span>
+      </div>
+
+      <div class="planos-sub">
+        <span class="sub-label">01 · Para empresas de coleta</span>
+        <h3>Assinatura por veículo em operação</h3>
+        <p>Você paga pelo caminhão — a unidade que fatura. A tripulação (operadores) entra ilimitada. Quanto maior a frota, menor o preço por veículo.</p>
       </div>
       <div class="planos-grid">
-        <Card v-for="p in planos" :key="p.name" :class="{ featured: p.featured }">
+        <Card v-for="p in planosEmpresa" :key="p.name" :class="{ featured: p.featured }">
           <template #title>
             <Chip v-if="p.featured" label="Recomendado" class="p-chip-coral featured-badge" />
             <div>{{ p.name }}</div>
           </template>
           <template #subtitle>{{ p.target }}</template>
           <template #content>
-            <div class="price">{{ p.price }}<small>/mês</small></div>
+            <div class="price">{{ p.price }}<small v-if="p.unit">{{ p.unit }}</small></div>
             <ul class="feats">
               <li v-for="f in p.feats" :key="f">{{ f }}</li>
             </ul>
+          </template>
+        </Card>
+      </div>
+
+      <div class="planos-sub planos-sub-2">
+        <span class="sub-label">02 · Para prefeituras</span>
+        <h3>Relatório de conformidade por faixa populacional</h3>
+        <p>Contrato anual dimensionado pela população. As quatro primeiras faixas ficam abaixo do limite de dispensa de licitação (Lei 14.133) — a prefeitura contrata direto, sem pregão.</p>
+      </div>
+      <ul class="report-feats">
+        <li v-for="f in reportFeats" :key="f">{{ f }}</li>
+      </ul>
+      <div class="planos-grid planos-grid-auto">
+        <Card v-for="p in planosPrefeitura" :key="p.faixa" :class="{ featured: p.featured }">
+          <template #title>
+            <Chip v-if="p.dispensa" label="Sem licitação" class="featured-badge chip-dispensa" />
+            <div class="faixa-title">{{ p.faixa }}</div>
+          </template>
+          <template #content>
+            <div class="price price-sm">{{ p.price }}<small v-if="p.price.includes('R$')">/ano</small></div>
+            <div class="plano-mensal">{{ p.mensal }}</div>
           </template>
         </Card>
       </div>
@@ -312,6 +356,24 @@ function goToSolucao() {
 .price { font-size: 1.85rem; font-weight: 700; color: var(--carvao); margin: 12px 0 16px; }
 .price small { font-size: 13px; color: var(--cinza-medio); font-weight: 400; }
 @media (max-width: 900px) { .planos-grid { grid-template-columns: 1fr; } }
+.free-note { display: flex; align-items: center; gap: 12px; background: var(--branco); border: 1px solid var(--cinza); border-left: 3px solid var(--verde); border-radius: 10px; padding: 14px 20px; max-width: 760px; margin: 0 auto 56px; font-size: 14px; }
+.free-note i { color: var(--verde); font-size: 18px; flex-shrink: 0; }
+.planos-sub { max-width: 1200px; margin: 0 0 24px; }
+.planos-sub-2 { margin-top: 72px; }
+.sub-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--teal-profundo); text-transform: uppercase; letter-spacing: 2px; font-weight: 500; display: block; margin-bottom: 8px; }
+.planos-sub h3 { font-size: 1.4rem; margin-bottom: 6px; }
+.planos-sub p { color: var(--cinza-medio); max-width: 720px; margin: 0; font-size: 15px; }
+.planos-grid .p-card { position: relative; }
+.planos-grid-auto { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.price-sm { font-size: 1.5rem; }
+.plano-mensal { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--cinza-medio); margin-top: 4px; }
+.faixa-title { font-size: 1.05rem; }
+.chip-dispensa { background: var(--verde) !important; color: var(--branco); font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.report-feats { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 8px 24px; padding: 0; margin: 0 0 28px; }
+.report-feats li { padding: 6px 0 6px 22px; position: relative; font-size: 14px; }
+.report-feats li::before { content: ''; position: absolute; left: 0; top: 12px; width: 8px; height: 8px; background: var(--verde); border-radius: 50%; }
+@media (max-width: 900px) { .planos-grid-auto { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .planos-grid-auto { grid-template-columns: 1fr; } }
 .contato-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; margin-bottom: 48px; }
 .contato-grid h3 { color: var(--coral); }
 .footer-meta { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; opacity: .7; padding-top: 40px; border-top: 1px solid rgba(250,250,247,.15); }
